@@ -13,9 +13,9 @@ declare (strict_types = 1);
 namespace Think\Component\Request\Facade;
 
 use Think\Component\Facade\Facade;
+use Think\Component\File\UploadedFile;
 use Think\Component\Env\Env;
-use Think\Component\Request\File\UploadedFile;
-use think\route\Rule;
+use Think\Component\Session\Session;
 
 /**
  * @see \Think\Component\Request\Request
@@ -54,8 +54,6 @@ use think\route\Rule;
  * @method static bool isCli() 是否为cli
  * @method static bool isCgi() 是否为cgi
  * @method static mixed param(string|array $name = '', mixed $default = null, string|array $filter = '') 获取当前请求的参数
- * @method static \Think\Component\Request\Request setRule(Rule $rule) 设置路由变量
- * @method static Rule|null rule() 获取当前路由对象
  * @method static \Think\Component\Request\Request setRoute(array $route) 设置路由变量
  * @method static mixed route(string|array $name = '', mixed $default = null, string|array $filter = '') 获取路由参数
  * @method static mixed get(string|array $name = '', mixed $default = null, string|array $filter = '') 获取GET参数

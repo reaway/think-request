@@ -14,8 +14,8 @@ namespace Think\Component\Request;
 
 use ArrayAccess;
 use Exception;
-use Think\Component\Request\File\UploadedFile;
 use Think\Component\Lang\Facade\Lang;
+use Think\Component\File\UploadedFile;
 use Think\Component\Env\Env;
 use Think\Component\Session\Session;
 

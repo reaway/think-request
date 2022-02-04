@@ -17,7 +17,8 @@
     "reaway/think-facade": "^1.0",
     "reaway/think-lang": "^1.0",
     "reaway/think-env": "^1.0",
-    "reaway/think-session": "^1.0"
+    "reaway/think-session": "^1.0",
+    "reaway/think-file": "^1.0"
   },
   "autoload": {
     "psr-4": {
