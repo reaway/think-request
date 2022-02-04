@@ -13,10 +13,11 @@ declare (strict_types = 1);
 namespace Think\Component\Request;
 
 use ArrayAccess;
+use Exception;
+use Think\Component\Request\File\UploadedFile;
 use Think\Component\Lang\Facade\Lang;
 use Think\Component\Env\Env;
-use Think\Component\Request\File\UploadedFile;
-use think\route\Rule;
+use Think\Component\Session\Session;
 
 /**
  * 请求管理类
@@ -890,28 +891,6 @@ class Request implements ArrayAccess
         }
 
         return $data;
-    }
-
-    /**
-     * 设置路由变量
-     * @access public
-     * @param  Rule $rule 路由对象
-     * @return $this
-     */
-    public function setRule(Rule $rule)
-    {
-        $this->rule = $rule;
-        return $this;
-    }
-
-    /**
-     * 获取当前路由对象
-     * @access public
-     * @return Rule|null
-     */
-    public function rule()
-    {
-        return $this->rule;
     }
 
     /**
