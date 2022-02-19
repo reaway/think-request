@@ -15,11 +15,11 @@ use Think\Component\Request\Facade\Request;
 if (!function_exists('request')) {
     /**
      * 获取当前Request对象实例
-     * @return Request
+     * @return Think\Component\Request\Request
      */
     function request(): Think\Component\Request\Request
     {
-        return app('request');
+        return app('Think\Component\Request\Request');
     }
 }
 

@@ -14,9 +14,10 @@ namespace Think\Component\Request;
 
 use ArrayAccess;
 use Exception;
-use Think\Component\Lang\Facade\Lang;
 use Think\Component\File\UploadedFile;
+use Think\Component\File\File;
 use Think\Component\Env\Env;
+use Think\Component\Lang\Lang;
 use Think\Component\Session\Session;
 
 /**
@@ -298,6 +299,12 @@ class Request implements ArrayAccess
     protected $mergeParam = false;
 
     /**
+     * Lang对象
+     * @var Lang
+     */
+    protected $lang;
+
+    /**
      * 架构函数
      * @access public
      */
@@ -307,7 +314,7 @@ class Request implements ArrayAccess
         $this->input = file_get_contents('php://input');
     }
 
-    public static function __make(Env $env)
+    public static function __make(Env $env, Lang $lang)
     {
         $request = new static();
 
@@ -333,6 +340,7 @@ class Request implements ArrayAccess
         $request->header = array_change_key_case($header);
         $request->server = $_SERVER;
         $request->env    = $env;
+        $request->lang    = $lang;
 
         $inputData = $request->getInputData($request->input);
 
@@ -1208,7 +1216,7 @@ class Request implements ArrayAccess
             7 => 'file write error',
         ];
 
-        $msg = Lang::get($fileUploadErrors[$error]);
+        $msg = $this->lang->get($fileUploadErrors[$error]);
         throw new Exception($msg, $error);
     }
 
