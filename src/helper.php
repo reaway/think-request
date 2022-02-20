@@ -19,7 +19,7 @@ if (!function_exists('request')) {
      */
     function request(): Think\Component\Request\Request
     {
-        return app('Think\Component\Request\Request');
+        return container('Think\Component\Request\Request');
     }
 }
 
