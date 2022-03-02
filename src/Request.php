@@ -904,6 +904,28 @@ class Request implements ArrayAccess
     /**
      * 设置路由变量
      * @access public
+     * @param  $rule 路由对象
+     * @return $this
+     */
+    public function setRule($rule)
+    {
+        $this->rule = $rule;
+        return $this;
+    }
+
+    /**
+     * 获取当前路由对象
+     * @access public
+     * @return
+     */
+    public function rule()
+    {
+        return $this->rule;
+    }
+
+    /**
+     * 设置路由变量
+     * @access public
      * @param  array $route 路由变量
      * @return $this
      */
